@@ -1,0 +1,16 @@
+E:\IT STEP\C#\Final Project\QuizGameProject\bin\Debug\QuizGameProject.exe.config
+E:\IT STEP\C#\Final Project\QuizGameProject\bin\Debug\QuizGameProject.exe
+E:\IT STEP\C#\Final Project\QuizGameProject\bin\Debug\QuizGameProject.pdb
+E:\IT STEP\C#\Final Project\QuizGameProject\bin\Debug\BusinessLogicLayer.dll
+E:\IT STEP\C#\Final Project\QuizGameProject\bin\Debug\DataLogicLayer.dll
+E:\IT STEP\C#\Final Project\QuizGameProject\bin\Debug\BusinessLogicLayer.pdb
+E:\IT STEP\C#\Final Project\QuizGameProject\bin\Debug\DataLogicLayer.pdb
+E:\IT STEP\C#\Final Project\QuizGameProject\obj\Debug\QuizGameProject.csproj.AssemblyReference.cache
+E:\IT STEP\C#\Final Project\QuizGameProject\obj\Debug\QuizGameProject.csproj.SuggestedBindingRedirects.cache
+E:\IT STEP\C#\Final Project\QuizGameProject\obj\Debug\QuizGameProject.csproj.CoreCompileInputs.cache
+E:\IT STEP\C#\Final Project\QuizGameProject\obj\Debug\QuizGameProject.csproj.CopyComplete
+E:\IT STEP\C#\Final Project\QuizGameProject\obj\Debug\QuizGameProject.exe
+E:\IT STEP\C#\Final Project\QuizGameProject\obj\Debug\QuizGameProject.pdb
+E:\IT STEP\C#\Final Project\QuizGameProject\bin\Debug\ConsoleViewTemplate.exe
+E:\IT STEP\C#\Final Project\QuizGameProject\bin\Debug\ConsoleViewTemplate.pdb
+E:\IT STEP\C#\Final Project\QuizGameProject\bin\Debug\ConsoleViewTemplate.exe.config

@@ -1,0 +1,8 @@
+E:\IT STEP\C#\ConsoleViewTemplate\bin\Debug\ConsoleViewTemplate.exe.config
+E:\IT STEP\C#\ConsoleViewTemplate\bin\Debug\ConsoleViewTemplate.exe
+E:\IT STEP\C#\ConsoleViewTemplate\bin\Debug\ConsoleViewTemplate.pdb
+E:\IT STEP\C#\ConsoleViewTemplate\obj\Debug\ConsoleViewTemplate.csproj.AssemblyReference.cache
+E:\IT STEP\C#\ConsoleViewTemplate\obj\Debug\ConsoleViewTemplate.csproj.SuggestedBindingRedirects.cache
+E:\IT STEP\C#\ConsoleViewTemplate\obj\Debug\ConsoleViewTemplate.csproj.CoreCompileInputs.cache
+E:\IT STEP\C#\ConsoleViewTemplate\obj\Debug\ConsoleViewTemplate.exe
+E:\IT STEP\C#\ConsoleViewTemplate\obj\Debug\ConsoleViewTemplate.pdb

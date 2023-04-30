@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -72,7 +74,14 @@ namespace BusinessLogicLayer.Models
 
         public static bool IsUserExist(string login)
         {
-            var users = FileXmlSerrealization.Read<List<User>>(path);
+            List<User> users;
+            if (File.Exists(path))
+                users = FileXmlSerrealization.Read<List<User>>(path);
+            else
+            {
+                FileXmlSerrealization.Write(path, new List<User>());
+                return false;
+            }
             return users.Find(u => u.Login == login) != null;
         }
 

@@ -37,8 +37,12 @@ namespace QuizGameProject
                 switch (option)
                 {
                     case 0:
-                        currectUsrer.Statistics.Add(GameView.Start());
-                        currectUsrer.SaveUser();
+                        var stats = GameView.Start();
+                        if (stats != null)
+                        {
+                            currectUsrer.Statistics.Add(stats);
+                            currectUsrer.SaveUser();
+                        }
                         break;
                     case 1:
                         ShowStatistics();
@@ -93,7 +97,8 @@ namespace QuizGameProject
 
         private static void ShowStatistics()
         {
-            if(currectUsrer.Statistics.Count == 0)
+            
+            if(currectUsrer.Statistics.Count == 0 || Stats.Categories.Count == 0)
             {
                 Console.WriteLine("No game is played yet");
                 return;
@@ -102,7 +107,10 @@ namespace QuizGameProject
             foreach(var stats in currectUsrer.Statistics)
             {
                 Console.WriteLine("Game " + (num++));
-                Console.WriteLine("Category: " + Stats.Categories[stats.CategoryIndex]);
+                if(stats.CategoryIndex == Stats.Categories.Count)
+                    Console.WriteLine("Category: mixed categories");
+                else 
+                    Console.WriteLine("Category: " + Stats.Categories[stats.CategoryIndex]);
                 for(int i = 0; i < stats.Answers.Count; i++)
                 {
                     Console.ForegroundColor = stats.Answers[i] ? 

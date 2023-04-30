@@ -20,11 +20,28 @@ namespace QuizGameProject
 
         public static Stats Start()
         {
-            int option = View.Menu(Stats.Categories.ToArray(), "Choose category");
-            var quizs = quizService.GetAll().Where(q => q.CategoryIndex == option).ToList();
-            quizs = new List<Quiz>(MixQuizs(quizs));
+            if(Stats.Categories.Count == 0)
+            {
+                Console.WriteLine("No quizes are added yet");
+                Console.ReadKey();
+                return null;
+            }
+            var categories = new List<string>(Stats.Categories);
+            categories.Add("Mixed categories");
+            categories.Add("Exit");
+            int option = View.Menu(categories.ToArray(), "Choose category");
+            List<Quiz> quizs = new List<Quiz>();
+
+            if (option == categories.Count - 1)
+                return null;
+            else if (option == categories.Count - 2)
+                quizs = quizService.GetAll();
+            else
+                quizs = quizService.GetAll().Where(q => q.CategoryIndex == option).ToList(); ;
+            quizs = new List<Quiz>(MixQuizs(quizs, 10));
             Stats stats = new Stats();
             stats.CategoryIndex = option;
+
             foreach(var quiz in quizs)
             {
                 bool[] answers = GetAnswers(quiz.Question, quiz.Options);
@@ -33,14 +50,15 @@ namespace QuizGameProject
             return stats;
         }
 
-        private static List<Quiz> MixQuizs(List<Quiz> quizs)
+        private static List<Quiz> MixQuizs(List<Quiz> quizs, int count)
         {
             Random random = new Random();
             List<int> nums = new List<int>();
             for (int i = 0; i < quizs.Count; i++)
                 nums.Add(i);
             List<Quiz> newQuizs = new List<Quiz>();
-            for(int i = 0; i < quizs.Count; i++)
+            int length = Math.Min(quizs.Count, count);
+            for(int i = 0; i < length; i++)
             {
                 int index = nums[random.Next(0, nums.Count)];
                 nums.Remove(index);
@@ -101,7 +119,11 @@ namespace QuizGameProject
 
         public static void ChangeQuiz()
         {
-            int option = View.Menu(Stats.Categories.ToArray(), "Choose category");
+            var categories = new List<string>(Stats.Categories);
+            categories.Add("Exit");
+            int option = View.Menu(categories.ToArray(), "Choose category");
+            if (option == categories.Count - 1)
+                return;
             var quizs = quizService.GetAll().Where(q => q.CategoryIndex == option).ToList();
             Console.Clear();
             Console.WriteLine("Category: " + Stats.Categories[option]);
